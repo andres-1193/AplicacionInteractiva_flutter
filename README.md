@@ -67,6 +67,8 @@ class _WorkdayScreenState extends State<WorkdayScreen> {
 //metodo para validar que se ingrese una fecha
 //muestre el mensaje de por favor ingrese un fecha cuando el usuario
 // le da clic al boton CALCULAR DIA LABORAL, si ha dejado el campo vacio
+
+
   void _calculateWorkday() {
     if (_dateController.text.isEmpty) {
       setState(() {
@@ -78,6 +80,8 @@ class _WorkdayScreenState extends State<WorkdayScreen> {
 //metodo para validar que se ingrese una fecha correcta
 //muestre el mensaje de 'Fecha inválida. Usa el formato aaaa-mm-dd'cuando el usuario
 // digita un formato de  fecha que no es valida.
+
+
     final date = DateTime.tryParse(_dateController.text);
     if (date == null) {
       setState(() {
@@ -95,6 +99,8 @@ class _WorkdayScreenState extends State<WorkdayScreen> {
   //condicional donde  valida que la fecha ingresada por el usuario este en el rango de 1 a 5
   // y esto significa que el dia es laboral, en caso contrario si el  dato arrona un numero 6 o 7
   // corresponde a un dia no Laboral
+
+  
   String _getWorkday(DateTime date) {
     // Obtén el día de la semana (1=Lunes, 2=Martes, ..., 7=Domingo)
     int dayOfWeek = date.weekday;
@@ -113,6 +119,7 @@ class _WorkdayScreenState extends State<WorkdayScreen> {
 // el ingresar a la estructura este dato hace un recorrido por cada case donde si es 1
 //corresponde a Lunes, 2 a martes y asi sucesivamente, por ultimo  se devuelte el dato de tipo
 //string con el nombre de la Smemana
+
 
   String _dayOfWeekToString(int dayOfWeek) {
     switch (dayOfWeek) {
